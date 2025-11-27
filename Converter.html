@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>USD ke IDR Converter</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  input { padding: 8px; width: 200px; }
+  button { padding: 8px; }
+</style>
+</head>
+<body>
+
+<h2>Converter USD → Rupiah</h2>
+
+<input id="usd" type="number" placeholder="Masukkan USD">
+<button onclick="convert()">Convert</button>
+
+<p>Hasil dalam Rupiah: <b id="idr">-</b></p>
+
+<script>
+// Ubah kurs sesuai kebutuhan (contoh: 1 USD = 16000 Rupiah)
+const rate = 16000;
+
+function convert() {
+  let usd = parseFloat(document.getElementById("usd").value);
+  if (isNaN(usd)) return alert("Masukkan angka yang valid!");
+
+  let idr = usd * rate;
+  document.getElementById("idr").textContent = "Rp " + idr.toLocaleString("id-ID");
+}
+</script>
+
+</body>
+</html>
